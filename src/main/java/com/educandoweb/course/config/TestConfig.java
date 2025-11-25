@@ -2,7 +2,7 @@ package com.educandoweb.course.config;
 
 import java.time.Instant;
 import java.util.Arrays;
-import com.educandoweb.course.resources.OrderResource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +24,6 @@ import com.educandoweb.course.repositories.UserRepository;
 @Configuration
 @Profile("test")
 public class TestConfig implements CommandLineRunner{
-
-    private final OrderResource orderResource;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -41,10 +39,6 @@ public class TestConfig implements CommandLineRunner{
 	
 	@Autowired
 	private OrderItemRepository orderItemRepository;
-
-    TestConfig(OrderResource orderResource) {
-        this.orderResource = orderResource;
-    }
 
 	@Override
 	public void run(String... args) throws Exception {
